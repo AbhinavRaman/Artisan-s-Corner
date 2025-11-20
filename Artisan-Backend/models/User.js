@@ -28,6 +28,13 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+
+  shop: {
+    name: { type: String },
+    description: { type: String },
+    banner: { type: String },
+    logo: { type: String },
+  },
 });
 
 // Hash password before saving
