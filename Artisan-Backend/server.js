@@ -5,6 +5,7 @@ const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const { protect } = require("./middleware/auth");
 const vendorRoutes = require("./routes/vendorRoutes");
+const productRoutes = require("./routes/productRoutes");
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // Routes
 app.use("/api/auth", authRoutes);
-
 // Vendor Routes
 app.use("/api/vendor", vendorRoutes);
+// Product Routes
+app.use("/api/products", productRoutes);
