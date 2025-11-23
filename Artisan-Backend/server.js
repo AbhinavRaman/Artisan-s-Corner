@@ -6,6 +6,7 @@ const authRoutes = require("./routes/authRoutes");
 const { protect } = require("./middleware/auth");
 const vendorRoutes = require("./routes/vendorRoutes");
 const productRoutes = require("./routes/productRoutes");
+const orderRoutes = require("./routes/orderRoutes");
 
 const app = express();
 
@@ -39,3 +40,5 @@ app.use("/api/auth", authRoutes);
 app.use("/api/vendor", vendorRoutes);
 // Product Routes
 app.use("/api/products", productRoutes);
+// Order Routes
+app.use("/api/orders", orderRoutes);
