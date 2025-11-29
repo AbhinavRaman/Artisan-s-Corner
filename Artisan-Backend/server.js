@@ -46,7 +46,7 @@ app.use("/api/products", productRoutes);
 // Order Routes
 app.use("/api/orders", orderRoutes);
 // Review Routes
-app.use("/api/reviews", reviewRoutes);
+app.use("/api/reviews", require("./routes/reviewRoutes"));
 // Admin Routes
 app.use("/api/admin", adminRoutes);
 // User Routes

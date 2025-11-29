@@ -14,6 +14,14 @@ import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 import OrderSuccess from "../pages/OrderSuccess";
 
+import AdminRoute from "./AdminRoute";
+import AdminLayout from "../layouts/AdminLayout";
+import AdminDashboard from "../pages/admin/Dashboard";
+import Users from "../pages/admin/Users";
+import Vendors from "../pages/admin/Vendors";
+import AdminProducts from "../pages/admin/AdminProducts";
+import AdminOrders from "../pages/admin/AdminOrders";
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -112,6 +120,75 @@ const router = createBrowserRouter([
             <MainLayout>
                 <OrderSuccess />
             </MainLayout>
+        ),
+    },
+
+    {
+        path: "/checkout",
+        element: (
+            <MainLayout>
+            <Checkout />
+            </MainLayout>
+        ),
+    },
+    {
+        path: "/order-success",
+        element: (
+            <MainLayout>
+            <OrderSuccess />
+            </MainLayout>
+        ),
+    },
+
+    // Admin routes
+    {
+        path: "/admin",
+        element: (
+            <AdminRoute>
+            <AdminLayout>
+                <AdminDashboard />
+            </AdminLayout>
+            </AdminRoute>
+        ),
+    },
+    {
+        path: "/admin/users",
+        element: (
+            <AdminRoute>
+            <AdminLayout>
+                <Users />
+            </AdminLayout>
+            </AdminRoute>
+        ),
+    },
+    {
+        path: "/admin/vendors",
+        element: (
+            <AdminRoute>
+            <AdminLayout>
+                <Vendors />
+            </AdminLayout>
+            </AdminRoute>
+        ),
+    },
+    {
+        path: "/admin/products",
+        element: (
+            <AdminRoute>
+            <AdminLayout>
+                <AdminProducts />
+            </AdminLayout>
+            </AdminRoute>
+        ),
+    },
+    {
+        path: "/admin/orders",
+        element: (
+            <AdminRoute>
+            <AdminLayout>
+                <AdminOrders />
+            </AdminLayout>
+            </AdminRoute>
         ),
     },
 ]);
