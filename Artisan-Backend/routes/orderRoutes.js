@@ -5,13 +5,17 @@ const {
   createOrder,
   getMyOrders,
   getVendorOrders,
-  updateOrderStatus
+  updateOrderStatus,
+  createRazorpayOrder,
+  verifyAndCreateOrder
 } = require("../controllers/orderController");
 
 const { protect, authorizeRoles } = require("../middleware/auth");
 
 // CUSTOMER
-router.post("/", protect, createOrder);  
+router.post("/create-razorpay-order", protect, createRazorpayOrder);
+router.post("/verify-payment", protect, verifyAndCreateOrder);
+router.post("/", protect, createOrder);
 router.get("/my-orders", protect, getMyOrders);
 
 // VENDOR

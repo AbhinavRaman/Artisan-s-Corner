@@ -1,6 +1,8 @@
 # Node modules (Frontend + Backend)
 node_modules/
 */node_modules/
+package-lock.json
+yarn.lock
 
 # ---------------------------------------
 # Environment / Secrets
@@ -17,6 +19,10 @@ node_modules/
 Artisan-Backend/.env
 Artisan-Frontend/.env
 
+# Stripe keys and sensitive data
+.env.production
+.env.staging
+
 # ---------------------------------------
 # Build folders
 # ---------------------------------------
@@ -24,6 +30,7 @@ dist/
 build/
 */dist/
 */build/
+out/
 
 # ---------------------------------------
 # Logs
@@ -33,6 +40,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 *.log
+logs/
 
 # ---------------------------------------
 # Cache folders
@@ -40,12 +48,17 @@ pnpm-debug.log*
 .cache/
 .vite/
 *.tsbuildinfo
+.parcel-cache
+.next
+out
 
 # ---------------------------------------
 # OS-specific files
 # ---------------------------------------
 .DS_Store
 Thumbs.db
+*.bak
+*.tmp
 
 # ---------------------------------------
 # IDE / Editor folders
@@ -54,15 +67,42 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+.settings/
+*.iml
 
 # ---------------------------------------
 # Backend uploads or static files
 # ---------------------------------------
 Artisan-Backend/uploads/
+Artisan-Backend/public/uploads/
 uploads/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# ---------------------------------------
+# Dependency lock files (optional - uncomment if needed)
+# ---------------------------------------
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ---------------------------------------
+# Testing
+# ---------------------------------------
+coverage/
+.nyc_output/
+*.lcov
 
 # ---------------------------------------
 # Git folders
 # ---------------------------------------
 .git/
 .gitignore
+

@@ -18,20 +18,27 @@ exports.updateMyProfile = async (req, res) => {
 
     const user = await User.findById(req.user._id);
 
-    if (name) user.name = name;
-    if (email) user.email = email;
+    if (!user) return res.status(404).json({ message: "User not found" });
+
+    user.name = name || user.name;
+    user.email = email || user.email;
 
     await user.save();
 
+    // return clean user object
     res.json({
-      message: "Profile updated successfully",
-      user
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+      shop: user.shop || null
     });
 
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
+
 
 // CHANGE PASSWORD
 exports.changePassword = async (req, res) => {
@@ -40,8 +47,11 @@ exports.changePassword = async (req, res) => {
 
     const user = await User.findById(req.user._id);
 
+    if (!user) return res.status(404).json({ message: "User not found" });
+
     const match = await user.matchPassword(currentPassword);
-    if (!match) return res.status(400).json({ message: "Incorrect current password" });
+    if (!match)
+      return res.status(400).json({ message: "Incorrect current password" });
 
     user.password = newPassword;
     await user.save();

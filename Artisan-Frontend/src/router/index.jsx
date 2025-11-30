@@ -22,6 +22,11 @@ import Vendors from "../pages/admin/Vendors";
 import AdminProducts from "../pages/admin/AdminProducts";
 import AdminOrders from "../pages/admin/AdminOrders";
 
+import EditProduct from "../pages/vendor/EditProduct";
+
+import Profile from "../pages/Profile";
+import MyOrders from "../pages/MyOrders";
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -191,6 +196,34 @@ const router = createBrowserRouter([
             </AdminRoute>
         ),
     },
+
+    {
+        path: "/vendor/edit-product/:id",
+        element: (
+            <VendorRoute>
+                <VendorLayout>
+                    <EditProduct />
+                </VendorLayout>
+            </VendorRoute>
+        ),
+    },
+
+    {
+        path: "/profile",
+        element: (
+            <MainLayout>
+                <Profile />
+            </MainLayout>
+        )
+    },
+    {
+        path: "/my-orders",
+        element: (
+            <MainLayout>
+                <MyOrders />
+            </MainLayout>
+        )
+    }
 ]);
 
 export default router;

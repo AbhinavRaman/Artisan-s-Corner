@@ -1,1 +1,92 @@
 @import "tailwindcss";
+
+/* Smooth UI transitions */
+* {
+  @apply transition-colors duration-300;
+}
+
+/* Light mode default */
+body {
+  @apply bg-white text-black;
+}
+
+/* Dark mode styles */
+.dark {
+  @apply bg-gray-900 text-gray-100;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  @apply bg-gray-800 border-gray-700 text-gray-100;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  @apply text-gray-500;
+}
+
+/* Global input styling */
+input, textarea, select {
+  @apply border border-gray-300 rounded-lg p-2.5 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none bg-white text-gray-900;
+}
+
+/* Global button styling baseline */
+.btn {
+  @apply px-4 py-2.5 rounded-lg font-semibold shadow-sm hover:shadow-md active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200;
+}
+
+.btn-primary {
+  @apply bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-500;
+}
+
+.dark .btn-primary {
+  @apply bg-indigo-500 hover:bg-indigo-600;
+}
+
+.btn-danger {
+  @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+}
+
+.dark .btn-danger {
+  @apply bg-red-500 hover:bg-red-600;
+}
+
+.btn-success {
+  @apply bg-green-600 text-white hover:bg-green-700 focus:ring-green-500;
+}
+
+.dark .btn-success {
+  @apply bg-green-500 hover:bg-green-600;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-500;
+}
+
+.dark .btn-secondary {
+  @apply bg-gray-700 text-gray-100 hover:bg-gray-600;
+}
+
+/* Card styling */
+.card {
+  @apply bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200;
+}
+
+.dark .card {
+  @apply bg-gray-800 border-gray-700;
+}
+
+/* Container styling */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Text colors */
+.text-muted {
+  @apply text-gray-600;
+}
+
+.dark .text-muted {
+  @apply text-gray-400;
+}

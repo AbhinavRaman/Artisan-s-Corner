@@ -44,6 +44,8 @@ const OrderSchema = new mongoose.Schema({
 
     paidAt: Date,
 
+    paymentIntentId: String,
+
     createdAt: {
         type: Date,
         default: Date.now
